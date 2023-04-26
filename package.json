@@ -1,0 +1,22 @@
+{
+  "name": "odin-node-site",
+  "version": "1.0.0",
+  "description": "Small with node.js backend",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sbusenba/odin-node-site.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sbusenba/odin-node-site/issues"
+  },
+  "homepage": "https://github.com/sbusenba/odin-node-site#readme",
+  "dependencies": {
+    "prettier": "^2.8.8"
+  }
+}
