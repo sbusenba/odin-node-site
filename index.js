@@ -1,21 +1,42 @@
 const http = require("http");
 const fs = require("fs");
-
+const path = require("path");
 http
   .createServer((req, res) => {
     switch (req.url) {
       case "/":
-        res.write("home page");
+        fs.readFile(
+          path.join(__dirname, "/public", "index.html"),
+          (err, data) => {
+            if (err) throw err;
+            res.write(data);
+            res.end();
+          }
+        );
         break;
       case "/about":
-        res.write("about");
+        fs.readFile(
+          path.join(__dirname, "/public", "about.html"),
+          (err, data) => {
+            if (err) throw err;
+            res.write(data);
+            res.end();
+          }
+        );
         break;
       case "/contact-me":
-        res.write("contact me");
+        fs.readFile(
+          path.join(__dirname, "/public", "contact-me.html"),
+          (err, data) => {
+            if (err) throw err;
+            res.write(data);
+            res.end();
+          }
+        );
         break;
       default:
         res.write(req.url);
+        res.end();
     }
-    res.end();
   })
   .listen(5000);
