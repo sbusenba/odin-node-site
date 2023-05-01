@@ -35,8 +35,14 @@ http
         );
         break;
       default:
-        res.write(req.url);
-        res.end();
+        fs.readFile(
+          path.join(__dirname, "/public", "404.html"),
+          (err, data) => {
+            if (err) throw err;
+            res.write(data);
+            res.end();
+          }
+        );
     }
   })
   .listen(5000);
